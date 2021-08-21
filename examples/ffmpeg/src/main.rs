@@ -6,6 +6,10 @@ use log::{error, info};
 use std::str::FromStr;
 use structopt::StructOpt;
 
+/*
+    cargo run -- --url rtsp://@192.168.1.165:10554/tcp/av0_0 --username admin --password 123456
+*/
+
 #[derive(StructOpt)]
 struct Source {
     #[structopt(long, parse(try_from_str))]
