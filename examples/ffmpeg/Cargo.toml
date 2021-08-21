@@ -1,0 +1,21 @@
+[package]
+name = "ffmpeg"
+version = "0.1.0"
+authors = ["Lucas Zanella <me@lucaszanella.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ffmpeg-next = {path="./rust-ffmpeg-1"}
+libc = "0.2"
+log = "0.4.8"
+anyhow = "1.0.41"
+criterion = { version = "0.3.4", features = ["async_tokio"] }
+mylog = { git = "https://github.com/scottlamb/mylog" }
+structopt = "0.3.21"
+tokio = { version = "1.5.0", features = ["fs", "io-util", "macros", "parking_lot", "rt-multi-thread", "signal"] }
+retina = {path="../../"}
+url = "2.2.1"
+futures = "0.3.14"
+env_logger = "0.8.3"
