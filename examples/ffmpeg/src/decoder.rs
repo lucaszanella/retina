@@ -100,11 +100,11 @@ impl FfmpegSoftwareDecoder {
                         Some(parsed_packet) => {
                             let packet = ffmpeg_next::packet::Packet::copy(&parsed_packet);
                             if let Err(e) = decoder.borrow_mut().send_packet(&packet) {
-                                //warn
                                 error!("send_packet error: {:?}", e);
                             }
                         }
                         None => {
+                            error!("parsed_packet is NONE");
                             break;
                         }
                     }
